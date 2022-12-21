@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .accordion-header {
+    @apply px-6 py-4 cursor-pointer;
+  }
+  .accordion-header.active svg {
+    @apply transition duration-300 ease-in-out;
+    transform: rotateX(180deg);
+  }
+  .accordion-body {
+    @apply overflow-hidden transition-all duration-200 ease-out max-h-0;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
