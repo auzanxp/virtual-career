@@ -28,7 +28,8 @@ const ListData = () => {
 
     useEffect(() => {
         getDataJob();
-    }, [fetchStatus, setFetchStatus])
+        // eslint-disable-next-line
+    }, [fetchStatus, setFetchStatus]) 
 
     return (
         <>

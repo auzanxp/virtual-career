@@ -36,6 +36,7 @@ const JobDetail = () => {
 
     useEffect(() => {
         getDataJobDetail()
+        // eslint-disable-next-line
     }, [])
 
     return (

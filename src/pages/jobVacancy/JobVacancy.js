@@ -26,6 +26,7 @@ const JobVacancy = () => {
 
   useEffect(() => {
     getDataJob();
+    // eslint-disable-next-line
   }, [fetchStatus])
 
   return (
