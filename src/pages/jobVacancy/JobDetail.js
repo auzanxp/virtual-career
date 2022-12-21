@@ -1,6 +1,6 @@
 import axios from 'axios';
 import moment from 'moment';
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect} from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { GlobalContex } from '../../contex/GlobalContex';
 
@@ -87,7 +87,7 @@ const JobDetail = () => {
                                     </div>
                                 </div>
                                 {
-                                    dataJobDetail?.job_status == 1 &&
+                                    dataJobDetail?.job_status === 1 &&
                                     <div className="flex-none hidden md:block ">
                                         <span className="w-full px-3 py-1 text-sm text-white bg-green-500 rounded-full">
                                             Actively recruiting
@@ -95,7 +95,7 @@ const JobDetail = () => {
                                     </div>
                                 }
                                 {
-                                    dataJobDetail?.job_status != 1 &&
+                                    dataJobDetail?.job_status !== 1 &&
                                     <div className="flex-none hidden md:block ">
                                         <span className="w-full px-3 py-1 text-sm text-white bg-red-600 rounded-full">
                                             Stop recruiting

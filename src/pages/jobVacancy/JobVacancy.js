@@ -142,13 +142,13 @@ const JobVacancy = () => {
                     </span>
                   </div>
                 </div>
-                {item?.job_status == 1 &&
+                {item?.job_status === 1 &&
                   <div className="flex-none hidden md:block ">
                     <span className="w-full px-3 py-1 text-sm text-white bg-green-500 rounded-full">
                       OPEN
                     </span>
                   </div>}
-                {item?.job_status != 1 &&
+                {item?.job_status !== 1 &&
                   <div className="flex-none hidden md:block ">
                     <span className="w-full px-3 py-1 text-sm text-white bg-red-600 rounded-full">
                       CLOSE
