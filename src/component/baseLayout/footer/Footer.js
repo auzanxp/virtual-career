@@ -21,8 +21,8 @@ const Footer = () => {
                 <div className="flex flex-wrap items-center justify-center md:justify-between">
                     <div className="w-full px-4 mx-auto text-center md:w-4/12">
                         <div className="py-1 text-sm font-semibold text-gray-600">
-                            Copyright © 2023 All Recived 
-                            <a href="https://www.creative-tim.com" className="text-gray-600 hover:text-gray-900"> Creative Tim</a>.
+                            Copyright © 2023 All rights reserved
+                            <span className="text-gray-600 hover:text-gray-900"> Creative Tim</span>
                         </div>
                     </div>
                 </div>
