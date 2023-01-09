@@ -39,7 +39,7 @@ const CreateData = () => {
                         </label>
                         <textarea
                             className="form-control block w-full mb-3 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-fuchsia-500 focus:outline-none"
-                            type="textarea"
+                            type="text"
                             rows="4"
                             cols="50"
                             name="job_description"
@@ -53,7 +53,7 @@ const CreateData = () => {
                         </label>
                         <textarea
                             className="form-control block w-full mb-3 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-fuchsia-500 focus:outline-none"
-                            type="textarea"
+                            type="text"
                             rows="4"
                             cols="50"
                             name="job_qualification"

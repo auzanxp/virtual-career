@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
+import Modal from '../../../component/modal/Modal';
 import { GlobalContex } from '../../../contex/GlobalContex'
 
 const ListData = () => {
 
     const { datas, method } = useContext(GlobalContex)
     const [isShow, setIsShow] = useState(false);
+    const [seletcedData, setSelectedData] = useState();
 
     const {
         input,
@@ -12,7 +14,9 @@ const ListData = () => {
         dataJob,
         setSearch,
         fetchStatus,
-        setFetchStatus
+        setFetchStatus,
+        openModal,
+        setOpenModal
     } = datas
 
     const {
@@ -26,10 +30,15 @@ const ListData = () => {
         handleEditData
     } = method
 
+    const getAllData = (data) => {
+        setSelectedData(data);
+        setOpenModal(true);
+    }
+
     useEffect(() => {
         getDataJob();
         // eslint-disable-next-line
-    }, [fetchStatus, setFetchStatus]) 
+    }, [fetchStatus, setFetchStatus])
 
     return (
         <>
@@ -229,7 +238,9 @@ const ListData = () => {
                                                                     type="button"
                                                                     className="px-2 py-2 mb-2 mr-2 text-sm font-medium text-white bg-red-700 rounded-lg focus:outline-none hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
                                                                     value={item.id}
-                                                                    onClick={handleDelete}
+                                                                    onClick={() => {
+                                                                        getAllData(item)
+                                                                    }}
                                                                 >
                                                                     Delete
                                                                 </button>
@@ -274,6 +285,17 @@ const ListData = () => {
                                     </tbody>
                                 </table>
                             </div>
+                            {
+                                openModal &&
+                                <Modal
+                                    name={seletcedData?.title}
+                                    value={seletcedData?.id}
+                                    action={handleDelete}
+                                    close={() => {
+                                        setOpenModal(false);
+                                    }}
+                                />
+                            }
                         </div>
                     </div>
                 </div>

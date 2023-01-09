@@ -15,6 +15,7 @@ export const GlobalProvider = (props) => {
     const [fetchStatus, setFetchStatus] = useState(true);
     const [msg, setMsg] = useState('');
     const [currentId, setCurrentId] = useState(-1);
+    const [openModal, setOpenModal] = useState(false);
     const [input, setInput] = useState({
         current_password: '',
         new_password: '',
@@ -287,6 +288,7 @@ export const GlobalProvider = (props) => {
             })
             .then(() => {
                 setFetchStatus(false)
+                setOpenModal(false);
             })
     }
 
@@ -331,7 +333,9 @@ export const GlobalProvider = (props) => {
         msg,
         setMsg,
         currentId,
-        setCurrentId
+        setCurrentId,
+        openModal,
+        setOpenModal
     }
 
     const method = {
