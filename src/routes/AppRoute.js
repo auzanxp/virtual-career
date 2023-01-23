@@ -13,6 +13,7 @@ import Home from '../pages/home/Home'
 import JobDetail from '../pages/jobVacancy/JobDetail'
 import JobVacancy from '../pages/jobVacancy/JobVacancy'
 import Login from '../pages/login/Login'
+import NotFound from '../pages/notfound'
 import Register from '../pages/register/Register'
 
 const AppRoute = () => {
@@ -115,6 +116,8 @@ const AppRoute = () => {
                             </DashboardLayout>
                         </RouteDashboard>
                     } />
+
+                    <Route path='*' element={<NotFound />} />
                 </Routes>
 
             </GlobalProvider>

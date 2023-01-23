@@ -11,18 +11,17 @@ const NotFound = () => {
             <div className="flex items-center justify-center grow">
                 <div className="w-1/3 px-24 py-16 bg-white rounded-md">
                     <Heading
-                        title={'404'}
+                        title={'Opss! 404'}
                         size="3xl"
-                        className="underline"
                     />
                     <p className="text-black">
-                        Halaman tidak di temukan<br />
+                        Page Not Found<br />
                     </p>
                     <div className="flex flex-col mt-8">
                         <p
                             className="text-black cursor-pointer hover:text-slate-700"
                             onClick={() => navigation(-1)}>
-                            Kembali
+                            Back
                         </p>
                     </div>
                 </div>
