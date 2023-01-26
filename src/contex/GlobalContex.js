@@ -16,6 +16,7 @@ export const GlobalProvider = (props) => {
     const [msg, setMsg] = useState('');
     const [currentId, setCurrentId] = useState(-1);
     const [openModal, setOpenModal] = useState(false);
+    const [showPassword, SetShowPassword] = useState(false)
     const [input, setInput] = useState({
         current_password: '',
         new_password: '',
@@ -38,14 +39,16 @@ export const GlobalProvider = (props) => {
     })
 
     const handleInput = (e) => {
-        let { value, name , type} = e.target
+        let { value, name, type } = e.target
 
         if (type === "radio") {
             setInput({ ...input, [name]: parseInt(value) });
-          } else {
+        } else {
             setInput({ ...input, [name]: value });
-          }
+        }
     }
+
+    const handleShowPassword = () => SetShowPassword(!showPassword)
 
     const handleSubmitRegister = (e) => {
         e.preventDefault()
@@ -335,7 +338,9 @@ export const GlobalProvider = (props) => {
         currentId,
         setCurrentId,
         openModal,
-        setOpenModal
+        setOpenModal,
+        showPassword,
+        SetShowPassword
     }
 
     const method = {
@@ -352,7 +357,8 @@ export const GlobalProvider = (props) => {
         handleSearch,
         handleFilterData,
         handleDelete,
-        handleEditData
+        handleEditData,
+        handleShowPassword
     }
     return (
         <GlobalContex.Provider value={{ datas, method }}>
