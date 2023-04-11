@@ -1,6 +1,7 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 import { createContext, useState } from "react";
+import { toast } from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
 
 export const GlobalContex = createContext();
@@ -83,10 +84,12 @@ export const GlobalProvider = (props) => {
                 const { token, user } = res.data
                 Cookies.set('token', token, { expires: 5 })
                 Cookies.set('user', JSON.stringify(user), { expires: 5 })
+                toast.success('Successfully!')
                 navigate('/dashboard')
             })
             .catch((err) => {
                 console.log(err)
+                toast.error('Oops! Something went wrong')
             })
     }
 
