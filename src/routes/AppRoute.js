@@ -15,6 +15,7 @@ import JobVacancy from '../pages/jobVacancy/JobVacancy'
 import Login from '../pages/login/Login'
 import NotFound from '../pages/notfound'
 import Register from '../pages/register/Register'
+import { Toaster } from 'react-hot-toast'
 
 const AppRoute = () => {
 
@@ -121,6 +122,7 @@ const AppRoute = () => {
                 </Routes>
 
             </GlobalProvider>
+            <Toaster />
         </BrowserRouter>
     )
 }

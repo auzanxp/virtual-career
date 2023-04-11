@@ -85,11 +85,12 @@ export const GlobalProvider = (props) => {
                 Cookies.set('token', token, { expires: 5 })
                 Cookies.set('user', JSON.stringify(user), { expires: 5 })
                 toast.success('Successfully!')
+                setInput('')
                 navigate('/dashboard')
             })
             .catch((err) => {
                 console.log(err)
-                toast.error('Oops! Something went wrong')
+                toast.error('Oops! Something went wrong', err)
             })
     }
 
