@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie'
 import React, { useContext } from 'react'
-import { Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { GlobalContex } from '../../../contex/GlobalContex'
 
 const Navbar = () => {
@@ -9,7 +9,7 @@ const Navbar = () => {
 
 
   const {
-      handleLogout
+    handleLogout
   } = method
 
 
@@ -20,7 +20,7 @@ const Navbar = () => {
           <nav className="fixed top-0 left-0 right-0 z-30 flex flex-wrap items-center px-4 py-2 mx-4 my-4 shadow-lg rounded-3xl rounded-blur bg-white/80 backdrop-blur-sm backdrop-saturate-200 lg:flex-nowrap lg:justify-start">
             <div className="flex items-center justify-between w-full p-0 pl-2 mx-auto flex-wrap-inherit">
               <Link to={'/'} className="text-sm font-bold whitespace-nowrap text-slate-700 lg:ml-0"><img src='/vc.png' alt='Virtual Career' /></Link>
-              <div className="flex-grow overflow-hidden lg-max:max-h-0 basis-full lg:flex lg:basis-auto">
+              <div className="flex-grow overflow-hidden lg-max:max-h-0 basis-full lg:flex lg:basis-auto hidden">
                 <ul className="flex flex-col pl-0 mb-0 list-none lg:flex-row xl:ml-auto">
                   {
                     !Cookies.get('token') &&
